@@ -8,16 +8,17 @@ public class FindMinCoinsToReachAmountFunction {
         // Place holder to fill up the dp array, we could just do amount + 1 since no point to go above
         int max = amount + 1;
         
-        // The last index of the array should be the amount we trying to find
+        // The last index of the array should be the amount we trying to find, since index starts from 0
         int[] dp = new int[amount + 1];
         
-        // Fill up the array with default value
+        // Fill up the array with default value as place holder, since we are getting min
         Arrays.fill(dp, max);
         
         // Always only need zero coin for $0 amount
         dp[0] = 0;
         
         // Starting from 1 since 0 index is already 0
+        // For each dollars in amount
         for(int i = 1; i <= amount; i++){
             // For each coins
             for(int j = 0; j < coins.length; j++){
@@ -31,7 +32,7 @@ public class FindMinCoinsToReachAmountFunction {
             }
         }
         
-        // The last element can't be bigger than the amount it given
+        // Return -1 when the last element is bigger than amount since we did max = amount + 1 earlier
         // The last element will be the fewest coins to get the amount
         return dp[amount] > amount ? -1 : dp[amount];
     }
