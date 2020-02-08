@@ -22,11 +22,10 @@ public class FindMinCoinsToReachAmountFunction {
         for(int i = 1; i <= amount; i++){
             // For each coins
             for(int j = 0; j < coins.length; j++){
-                // If the coin is not bigger than or equal to current amount we trying to find
+                // Only look at the coin thatis not bigger than the current dollars
                 if(coins[j] <= i){
-                    // Default is amount + 1
                     // dp[i - coins[j]] + 1 because +1 is using up one coin at first, then
-                    // dp[i - coins[j]] will get the amount that is left after subtracting first coin
+                    // dp[i - coins[j]] will get how many coins we need to get current dollars
                     dp[i] = Math.min(dp[i], dp[i - coins[j]] + 1);
                 }
             }
