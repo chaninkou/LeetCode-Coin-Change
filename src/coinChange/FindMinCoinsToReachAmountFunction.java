@@ -13,6 +13,9 @@ public class FindMinCoinsToReachAmountFunction {
         
         // Fill up the array with default value as place holder, since we are getting min
         Arrays.fill(dp, max);
+//        for(int i = 1; i < dp.length; i++){
+//        	dp[i] = amount + 1;
+//        }
         
         // Always only need zero coin for $0 amount
         dp[0] = 0;
