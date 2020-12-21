@@ -3,8 +3,7 @@ package coinChange;
 import java.util.Arrays;
 
 public class FindMinCoinsToReachAmountFunction {
-    // Dp
-	// Bottom up approach
+    // Dp Bottom up approach
     public int coinChange(int[] coins, int amount) {
         // Place holder to fill up the dp array, we could just do amount + 1 since no point to go above
         int max = amount + 1;
