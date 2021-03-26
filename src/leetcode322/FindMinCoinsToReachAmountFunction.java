@@ -1,4 +1,4 @@
-package coinChange;
+package leetcode322;
 
 import java.util.Arrays;
 
